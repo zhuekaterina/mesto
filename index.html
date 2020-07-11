@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Проект 4 Катя Жукова">
+    <meta name="keywords" content="проекты, Яндекс Практикум, web разработка">
+    <meta name="author" content="Катя Жукова">
+    <title>Место</title>
+    <link rel="stylesheet" href="./pages/index.css">
+</head>
+<body class="body">
+    <div class="page">
+        <header class="header">
+            <img class="header__logo" src="./images/logo.svg" alt="Название проекта - Mesto.">
+        </header>
+        <main class="main">
+            <section class="profile">
+                <div class="profile__container">
+                    <img class="profile__avatar" src="./images/kusto.jpg" alt="Аватар пользователя.">
+                    <div class="profile__info">
+                        <p class="profile__name">Жак-Ив Кусто</p>
+                        <p class="profile__job">Исследователь океана</p>
+                        <p class="profile__edit"><input type="image" class="profile__edit-button" src="./images/edit_button.svg" alt="Кнопка для редактирования профиля."></p>
+                    </div>
+                    <button class="profile__add-button">
+                        <img class="profile__vector" src="./images/x.svg" alt="Кнопка для добавления новой локации.">
+                    </button>
+                </div>
+            </section>
+            <section class="elements">
+                <div class="element">
+                    <img class="element__picture" alt="Храм на фоне гор." src="./images/karachaevsk.jpg">
+                    <div class="element__caption">
+                        <div class="element__text">
+                            <p class="element__name">Карачаевск</p>
+                            <img class="element__vector" src="./images/heart.svg" alt="Кнопка в виде сердечка для лайка.">
+                        </div>
+                    </div>
+                </div>
+                <div class="element">
+                    <img class="element__picture" alt="Поле и вдали гора." src="./images/elbrus.jpg">
+                    <div class="element__caption">
+                        <div class="element__text">
+                            <p class="element__name">Гора Эльбрус</p>
+                            <img class="element__vector" src="./images/heart.svg" alt="Кнопка в виде сердечка для лайка.">
+                        </div>
+                    </div>
+                </div>
+                <div class="element">
+                    <img class="element__picture" alt="Лес и заснеженные горные пики." src="./images/dombai.jpg">
+                    <div class="element__caption">
+                        <div class="element__text">
+                            <p class="element__name">Домбай</p>
+                            <img class="element__vector" src="./images/heart.svg" alt="Кнопка в виде сердечка для лайка.">
+                        </div>
+                    </div>
+                </div>
+                <div class="element">
+                    <img class="element__picture" alt="Поле и вдали гора." src="./images/elbrus.jpg">
+                    <div class="element__caption">
+                        <div class="element__text">
+                            <p class="element__name">Гора Эльбрус</p>
+                            <img class="element__vector" src="./images/heart.svg" alt="Кнопка в виде сердечка для лайка.">
+                        </div>
+                    </div>
+                </div>
+                <div class="element">
+                    <img class="element__picture" alt="Лес и заснеженные горные пики." src="./images/dombai.jpg">
+                    <div class="element__caption">
+                        <div class="element__text">
+                            <p class="element__name">Домбай</p>
+                            <img class="element__vector" src="./images/heart.svg" alt="Кнопка в виде сердечка для лайка.">
+                        </div>
+                    </div>
+                </div>
+                <div class="element">
+                    <img class="element__picture" alt="Храм на фоне гор." src="./images/karachaevsk.jpg">
+                    <div class="element__caption">
+                        <div class="element__text">
+                            <p class="element__name">Карачаево-Черкессия</p>
+                            <img class="element__vector" src="./images/heart.svg" alt="Кнопка в виде сердечка для лайка.">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="popup">
+                <div class="popup__container">
+                    <p class="popup__close"><input type="image" class="popup__close-button" src="./images/x.svg" alt="Кнопка закрытия."></p>
+                    <div class="popup__form">
+                        <h2 class="popup__title">Редактировать профиль</h2>
+                        <p class="popup__name"><input class="popup__name-form" type="text"></p>
+                        <p class="popup__job"><input class="popup__job-form" type="text"></p>
+                        <button type="submit" class="popup__save-button">Сохранить</button>
+                    </div>
+                </div>
+            </div>
+            <script src="scripts/scripts.js"></script>
+        </main>
+        <footer class="footer">
+            <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
+        </footer>
+    </div>
+</body>
+</html>
