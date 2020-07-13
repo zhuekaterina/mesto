@@ -11,6 +11,9 @@
     border-bottom: 1px solid #cccccc;
 }
 
+.popup__field:first-child {
+    margin-bottom: 30px;
+}
 
 @media screen and (max-width: 910px) {
     .popup__field {
