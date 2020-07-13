@@ -8,3 +8,4 @@
 JS, DOM, HTML, CSS, grid-layout, flexbox, адаптивная верстка, Git.
 
 ### Ссылка на проект:
+https://zhuekaterina.github.io/mesto/
