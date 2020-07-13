@@ -1,5 +1,5 @@
 .popup__field {
-    margin: 0px auto;
+    margin: 0px auto 30px auto;
     width: 358px;
     min-height: 27px;
     font-style: normal;
@@ -9,10 +9,6 @@
     color: #000000;
     border: none;
     border-bottom: 1px solid #cccccc;
-}
-
-.popup__field:first-child {
-    margin-bottom: 30px;
 }
 
 @media screen and (max-width: 910px) {
