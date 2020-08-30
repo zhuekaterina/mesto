@@ -1,4 +1,4 @@
-.popup__field {
+.popup-user__field {
     margin: 0px auto 30px auto;
     width: 358px;
     min-height: 27px;
@@ -12,7 +12,7 @@
 }
 
 @media screen and (max-width: 910px) {
-    .popup__field {
+    .popup-user__field {
         font-size: 10px;
         max-width: 220px;
     }

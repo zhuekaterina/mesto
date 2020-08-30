@@ -40,16 +40,16 @@
         <footer class="footer">
             <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
         </footer>
-        <div class="popup">
-            <button type="button" name="close-button" class="popup__close-button"></button>
-            <form class="popup__form">
-                    <h3 class="popup__title">Редактировать профиль</h3>
-                    <input required placeholder="Имя пользователя" name="input-name" id="name" class="popup__field" type="text">
-                    <input required placeholder="Род деятельности" name="input-job" id="job" class="popup__field" type="text">
-                    <button type="submit" class="popup__save-button" name="save-button">Сохранить</button>
+        <div class="popup popup-user">
+            <button type="button" name="close-button" class="popup-user__close-button"></button>
+            <form class="popup-user__form">
+                    <h3 class="popup-user__title">Редактировать профиль</h3>
+                    <input required placeholder="Имя пользователя" name="input-name" id="name" class="popup-user__field" type="text">
+                    <input required placeholder="Род деятельности" name="input-job" id="job" class="popup-user__field" type="text">
+                    <button type="submit" class="popup-user__save-button" name="save-button">Сохранить</button>
             </form>
         </div>
-        <div class="popup-card">
+        <div class="popup popup-card">
             <button type="button" name="card-close-button" class="popup-card__close-button"></button>
             <form class="popup-card__form">
                     <h3 class="popup-card__title">Новое место</h3>
@@ -58,14 +58,15 @@
                     <button type="submit" class="popup-card__save-button" name="card-save-button">Создать</button>
             </form>
         </div>
-        <div class="popup-zoom">
+        <div class="popup popup-zoom">
             <figure class="popup-zoom__figure">
                 <button type="button" name="image-close-button" class="popup-zoom__close-button"></button>
-                <img class="popup-zoom__image" alt="Увеличенное изображение выбранного места." src="">
+                <img class="popup-zoom__image" alt="Увеличенное изображение выбранного места." src="#">
                 <h4 class="popup-zoom__name"></h4>
             </figure>
         </div>
     </div>
-    <script src="scripts/scripts.js"></script>
+    <script id="initial-cards" src="scripts/cards.js"></script>
+    <script src="scripts/index.js"></script>
 </body>
 </html>

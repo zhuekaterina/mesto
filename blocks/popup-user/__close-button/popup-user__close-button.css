@@ -1,4 +1,4 @@
-.popup__close-button {
+.popup-user__close-button {
     width: 41px;
     height: 41px;
     background-color: transparent;
@@ -10,17 +10,17 @@
     margin-left: 465px;
 }
 
-.popup__close-button:hover {
+.popup-user__close-button:hover {
     opacity: 0.7;
     transition: opacity 0.5s linear;
 }
 
-.popup__close-button:active {
+.popup-user__close-button:active {
     outline: none;
 }
 
 @media screen and (max-width: 910px) {
-    .popup__close-button {
+    .popup-user__close-button {
         position: relative;
         top: 10px;
         margin-left: 270px;
