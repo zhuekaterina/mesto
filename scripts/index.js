@@ -19,6 +19,34 @@ const popupZoomImage = popupZoom.querySelector('.popup-zoom__image');
 const popupZoomName = popupZoom.querySelector('.popup-zoom__name');
 const closeZoomButton = popupZoom.querySelector('.popup-zoom__close-button');
 const cardElement = document.querySelector('#elementTemplate');
+const newCardImage = addCardForm.querySelector('#card-link');
+const newCardName = addCardForm.querySelector('#card-name');
+const initialCards = [ 
+    { 
+        name: 'Архыз', 
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg' 
+    }, 
+    { 
+        name: 'Челябинская область', 
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg' 
+    }, 
+    { 
+        name: 'Иваново', 
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg' 
+    }, 
+    { 
+        name: 'Камчатка', 
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg' 
+    }, 
+    { 
+        name: 'Холмогорский район', 
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg' 
+    }, 
+    { 
+        name: 'Байкал', 
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg' 
+    } 
+];
 
 function closeEscAndOverlayEvt(evt) {
     const popupOpened = document.querySelector('.popup_opened');
@@ -63,20 +91,17 @@ function formSubmitHandler(evt) {
     closeModalWindow(popupUser);
 }
 
-function handleLikeIcon() {
-    const element = event.target.closest('.element');
-    const likeButton = element.querySelector('.element__like-button');
-    likeButton.classList.add('element__like-button_active');
+function handleLikeIcon(evt) {
+    evt.target.classList.add('element__like-button_active');
 }
 
-function handleDeleteCard() {
-    const element = event.target.closest('.element');
-    element.remove();
+function handleDeleteCard(event) {
+    event.target.closest('.element').remove();
 }
 
 function handlePreviewPicture(picture, name) {
-    popupZoomImage.src = picture;
-    popupZoomName.textContent = name;
+    popupZoomImage.src = picture.src;
+    popupZoomName.textContent = name.textContent;
     openModalWindow(popupZoom);
 }
 
@@ -84,6 +109,7 @@ function addCard(name, link) {
     const cardElement = document.querySelector('#elementTemplate').content.cloneNode(true);
     const cardImage = cardElement.querySelector('.element__picture');
     const cardName = cardElement.querySelector('.element__name');
+
     cardImage.src = link;
     cardName.textContent = name;
 
@@ -94,28 +120,22 @@ function addCard(name, link) {
     cardLikeButton.addEventListener('click', handleLikeIcon);
     cardImage.addEventListener('click', evt => {
         evt.preventDefault()
-        const element = event.target.closest('.element');
-        const elementPicture = element.querySelector('.element__picture').src;
-        const elementName = element.querySelector('.element__name').textContent;
-        handlePreviewPicture(elementPicture, elementName);
+        handlePreviewPicture(cardImage, cardName);
     })
 
     return cardElement;
 }
+initialCards.forEach((element) => {
+    elementsContainer.append(addCard(element.name, element.link));
+});
 
 function addCardFormSubmit(evt) {
     evt.preventDefault();
-    const newCardImage = addCardForm.querySelector('#card-link').value;
-    const newCardName = addCardForm.querySelector('#card-name').value;
-    elementsContainer.prepend(addCard(newCardName, newCardImage));
+    elementsContainer.prepend(addCard(newCardName.value, newCardImage.value));
     addCardForm.reset();
     closeModalWindow(popupCard);
     saveButtonDisabled(popupCard);
 }
-
-initialCards.forEach((element) => {
-    elementsContainer.append(addCard(element.name, element.link));
-}); 
 
 editUserButton.addEventListener('click', evt => {
     evt.preventDefault();
