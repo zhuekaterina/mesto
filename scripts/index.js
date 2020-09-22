@@ -1,5 +1,6 @@
 import Card from './Card.js';
 import FormValidator from './FormValidator.js';
+import {initialCards} from './constants.js';
 
 const elementsContainer = document.querySelector('.elements');
 const addCardForm = document.querySelector('.popup-card__form');
@@ -20,33 +21,6 @@ export const popupZoom = document.querySelector('.popup-zoom');
 const closeZoomButton = popupZoom.querySelector('.popup-zoom__close-button');
 const newCardImage = addCardForm.querySelector('#card-link');
 const newCardName = addCardForm.querySelector('#card-name');
-const initialCards = [ 
-    { 
-        name: 'Архыз', 
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg' 
-    }, 
-    { 
-        name: 'Челябинская область', 
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg' 
-    }, 
-    { 
-        name: 'Иваново', 
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg' 
-    }, 
-    { 
-        name: 'Камчатка', 
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg' 
-    }, 
-    { 
-        name: 'Холмогорский район', 
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg' 
-    }, 
-    { 
-        name: 'Байкал', 
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg' 
-    } 
-];
-
 const object = ({
     formSelector: '.popup__form',
     inputSelector: '.popup__input',
@@ -56,8 +30,13 @@ const object = ({
     errorClass: 'popup__error_visible'
 });
 
+const newCard = {
+    name: '',
+    link: ''
+};
+
 initialCards.forEach((element) => {
-    const card = new Card(element.name, element.link, '#elementTemplate');
+    const card = new Card(element, '#elementTemplate');
     const cardElement = card.generateCard();
     elementsContainer.append(cardElement);
 });
@@ -71,23 +50,15 @@ function closeEscAndOverlayEvt(evt) {
 
 export function openModalWindow(modalWindow) {
     modalWindow.classList.add('popup_opened');
-    const inputList = Array.from(modalWindow.querySelectorAll('.popup__input'));
-    inputList.forEach((inputElement) => {
-        inputElement.classList.remove('popup__input_type_error');
-    });
-    const inputErrorList = Array.from(modalWindow.querySelectorAll('.popup__error'));
-    inputErrorList.forEach((error) => {
-        error.textContent = '';
-    });
     document.body.addEventListener('keydown', closeEscAndOverlayEvt);
     modalWindow.addEventListener('click', closeEscAndOverlayEvt);
 };
 
 function closeModalWindow(modalWindow) {
     modalWindow.classList.remove('popup_opened');
-    
     document.body.removeEventListener('keydown', closeEscAndOverlayEvt);
     modalWindow.removeEventListener('click', closeEscAndOverlayEvt);
+    popupZoom.querySelector('.popup-zoom__image').alt = '#';
 }
 
 function saveButtonDisabled(popup) {
@@ -111,7 +82,9 @@ function formSubmitHandler(evt) {
 
 function addCardFormSubmit(evt) {
     evt.preventDefault();
-    const card = new Card(newCardName.value, newCardImage.value, '#elementTemplate');
+    newCard.name = newCardName.value;
+    newCard.link = newCardImage.value;
+    const card = new Card(newCard, '#elementTemplate');
     const cardElement = card.generateCard();
     elementsContainer.prepend(cardElement);
     addCardForm.reset();
@@ -125,6 +98,7 @@ editUserButton.addEventListener('click', evt => {
     userJob.value = currentUserJob.textContent;
     openModalWindow(popupUser);
     saveButtonUnabled(popupUser);
+    editFormValidate.discardErrors();
 });
 
 closeUserButton.addEventListener('click', evt => {
@@ -141,6 +115,7 @@ addCardButton.addEventListener('click', evt => {
         inputElement.value = '';
     });
     openModalWindow(popupCard);
+    addFormValidate.discardErrors();
 });
 
 closeCardButton.addEventListener('click', evt => {

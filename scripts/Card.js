@@ -3,9 +3,9 @@ import {openModalWindow} from './index.js';
 
 
 export default class Card {
-    constructor(text, image, cardSelector) {
-        this._text = text;
-        this._image = image;
+    constructor(data, cardSelector) {
+        this._text = data.name;
+        this._image = data.link;
         this._cardSelector = cardSelector;
     }
 
@@ -32,16 +32,18 @@ export default class Card {
     }
 
     _handleLikeIcon() {
-        this._element.querySelector('.element__like-button').classList.add('element__like-button_active');
+        this._element.querySelector('.element__like-button').classList.toggle('element__like-button_active');
     }
 
     _handleDeleteCard() {
         this._element.remove();
+        this._element = null;
     }
 
     _handlePreviewPicture() {
         document.querySelector('.popup-zoom__image').src = this._element.querySelector('.element__picture').src;
         document.querySelector('.popup-zoom__name').textContent = this._element.querySelector('.element__name').textContent;
+        document.querySelector('.popup-zoom__image').alt = `${this._element.querySelector('.element__name').textContent}.`;
         openModalWindow(popupZoom);
     }
 

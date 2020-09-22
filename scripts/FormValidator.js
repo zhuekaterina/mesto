@@ -66,4 +66,11 @@ export default class FormValidator {
     });
     this._setEventListeners()
   }
+  
+  discardErrors() {
+    this._inputList.forEach((input) => {
+      this._input = input;
+      this._hideInputError();
+    });
+  }
 }
