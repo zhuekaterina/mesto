@@ -7,7 +7,6 @@
     <meta name="keywords" content="проекты, Яндекс Практикум, web разработка">
     <meta name="author" content="Катя Жукова">
     <title>Место</title>
-    <link rel="stylesheet" href="./pages/index.css">
 </head>
 <body class="body">
     <div class="page">
@@ -28,7 +27,7 @@
                 <template id="elementTemplate">
                     <div class="element">
                         <button type="button" class="element__delete-button" name="delete-button"></button>
-                        <img class="element__picture" alt="Изображение места." src="">
+                        <img class="element__picture" alt="Изображение места." src="#">
                         <div class="element__caption">
                             <h2 class="element__name"></h2>
                             <button type="button" class="element__like-button" name="like-button"></button>
@@ -41,7 +40,7 @@
             <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
         </footer>
         <div class="popup popup-user">
-            <button type="button" name="close-button" class="popup-user__close-button"></button>
+            <button type="button" name="close-button" class="popup__close-button popup-user__close-button"></button>
             <form class="popup__form popup-user__form" novalidate>
                     <h3 class="popup-user__title">Редактировать профиль</h3>
                     <input placeholder="Имя пользователя" name="input-name" id="user-name" class="popup__input popup-user__field" type="text" required minlength="2" maxlength="40">
@@ -52,7 +51,7 @@
             </form>
         </div>
         <div class="popup popup-card">
-            <button type="button" name="card-close-button" class="popup-card__close-button"></button>
+            <button type="button" name="card-close-button" class="popup__close-button popup-card__close-button"></button>
             <form class="popup__form popup-card__form" novalidate>
                     <h3 class="popup-card__title">Новое место</h3>
                     <input placeholder="Название" name="input-card-name" id="card-name" class="popup__input popup-card__field" type="text" required minlength="1" maxlength="30">
@@ -64,12 +63,11 @@
         </div>
         <div class="popup popup-zoom">
             <figure class="popup-zoom__figure">
-                <button type="button" name="image-close-button" class="popup-zoom__close-button"></button>
+                <button type="button" name="image-close-button" class="popup__close-button popup-zoom__close-button"></button>
                 <img class="popup-zoom__image" alt="#" src="#">
                 <h4 class="popup-zoom__name"></h4>
             </figure>
         </div>
     </div>
-    <script type="module" src="scripts/index.js"></script>
 </body>
 </html>

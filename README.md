@@ -5,7 +5,7 @@
 Проект оформлен по дизайн-макету, включает в себя единый шрифт и цветовую гамму, ориентирован на экраны устройств популярных размеров.
 
 ## Используемые технологии: 
-JS, DOM, HTML, CSS, grid-layout, flexbox, адаптивная верстка, Git.
+JS, DOM, HTML, CSS, Webpack, Babel, grid-layout, flexbox, адаптивная верстка, Git.
 
 ### Ссылка на проект:
 https://zhuekaterina.github.io/mesto/
