@@ -1,4 +1,4 @@
-import '../pages/index.css';
+import './index.css';
 import Card from '../components/Card.js';
 import FormValidator from '../components/FormValidator.js';
 import {initialCards} from '../utils/constants.js';
@@ -69,6 +69,7 @@ function formSubmitHandler() {
     newProfileInfo.newName = userName.value;
     newProfileInfo.newInfo = userJob.value;
     userProfileInfo.setUserInfo(newProfileInfo);
+    popupWithUserForm.close();
 }
 
 //Функция сабмита формы добавления карты
@@ -77,6 +78,7 @@ function addCardFormSubmit() {
     newCard.link = newCardImage.value;
     elementsContainer.prepend(renderCard(newCard, '#elementTemplate'));
     saveButtonDisabled(popupCard);
+    popupWithCardForm.close();
 }
 
 //Открытие формы пользователя

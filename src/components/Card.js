@@ -1,7 +1,3 @@
-/** Преобразуйте класс Card.
-Свяжите класс Card c попапом. Сделайте так, чтобы Card принимал в конструктор функцию handleCardClick. 
-Эта функция должна открывать попап с картинкой при клике на карточку. */
-
 export default class Card {
     constructor(card, cardSelector, handleCardClick) {
         this._card = card;
