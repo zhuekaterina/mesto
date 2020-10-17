@@ -38,6 +38,7 @@ export const closeCardButton = popupCard.querySelector('.popup-card__close-butto
 export const popupZoom = document.querySelector('.popup-zoom');
 export const newCardImage = addCardForm.querySelector('#card-link');
 export const newCardName = addCardForm.querySelector('#card-name');
+export const popupRemoval = document.querySelector('.popup-removal');
 export const object = ({
     formSelector: '.popup__form',
     inputSelector: '.popup__input',

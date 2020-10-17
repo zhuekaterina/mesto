@@ -6,6 +6,7 @@ import Section from '../components/Section.js';
 import PopupWithImage from '../components/PopupWithImage.js';
 import PopupWithForm from '../components/PopupWithForm.js';
 import UserInfo from '../components/UserInfo.js';
+import Api from '../components/Api.js';
 import {elementsContainer, 
     addCardForm,
     popupUserForm,
@@ -20,17 +21,34 @@ import {elementsContainer,
     popupZoom,
     newCardImage,
     newCardName,
+    popupRemoval,
     object,
     newCard} from '../utils/constants.js';
 
+//Api
+/** const api = new Api({
+    baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-16',
+    headers: {
+      authorization: '9e2464ed-9bf4-456d-960e-bc935e02e4f4',
+      'Content-Type': 'application/json'
+    }
+}); */
+//Попап с открытием изображения
 const popupZoomImage = new PopupWithImage(popupZoom);
 popupZoomImage.setEventListeners();
+//Попап с открытием формы пользователя
 const popupWithUserForm = new PopupWithForm(popupUser, formSubmitHandler);
 popupWithUserForm.setEventListeners();
+//Попап с добавлением новой карточки
 const popupWithCardForm = new PopupWithForm(popupCard, addCardFormSubmit);
 popupWithCardForm.setEventListeners();
+//Попап с подтверждением удаления карточки
+const popupCardRemoval = new Popup(popupRemoval);
+popupCardRemoval.setEventListeners();
+
 const userProfileInfo = new UserInfo(profileInfo);
 
+//Открытие попапа с картинкой
 function handleCardClick(item) {
     popupZoomImage.open(item);
 }
@@ -40,7 +58,7 @@ const renderCard = (element, elementSelector) => {
     const cardElement = card.generateCard();
     return cardElement;
 } 
-
+//Добавление изначальных карточек
 const initialCardsList = new Section({
     items: initialCards,
     renderer: (item) => {

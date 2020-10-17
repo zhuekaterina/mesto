@@ -16,6 +16,9 @@
         <main class="main">
             <section class="profile main__profile">
                 <img class="profile__avatar" src="./images/kusto.jpg" alt="Аватар пользователя.">
+                <div class="profile__avatar-cover">
+                    <button type="button" name="avatar-edit-button" class="profile__avatar-edit" ></button>
+                </div>
                 <div class="profile__info">
                     <h1 class="profile__name">Жак-Ив Кусто</h1>
                     <button type="button" name="edit-button" class="profile__edit-button"></button>
@@ -67,6 +70,22 @@
                 <img class="popup-zoom__image" alt="#" src="#">
                 <h4 class="popup-zoom__name"></h4>
             </figure>
+        </div>
+        <div class="popup popup-removal">
+            <button type="button" name="removal-close-button" class="popup__close-button popup-removal__close-button"></button>
+            <div class="popup-removal_container">
+                <h3 class="popup-removal__verify">Вы уверены?</h3>
+                <button type="submit" class="popup__button popup-removal__verify-button" name="removal-save-button">Да</button>
+            </div>
+        </div>
+        <div class="popup popup-avatar">
+            <button type="button" name="avatar-close-button" class="popup__close-button popup-avatar__close-button"></button>
+            <form class="popup__form popup-avatar__form" novalidate>
+                    <h3 class="popup-avatar__title">Обновить аватар</h3>
+                    <input placeholder="Ссылка на картинку" name="input-avatar-link" id="avatar-link" class="popup__input popup-avatar__field" required type="url">
+                    <span class="popup__error" id="avatar-link-error"></span>
+                    <button type="submit" class="popup__button popup-avatar__save-button" name="avatar-save-button">Сохранить</button>
+            </form>
         </div>
     </div>
 </body>
