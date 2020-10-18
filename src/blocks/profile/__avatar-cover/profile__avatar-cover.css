@@ -3,11 +3,11 @@
     top: 0px;
     left: 0px;
     width: 100%;
-    height: 100%;
-    background: #2A2C2F;
+    height: 96%;
+    border-radius: 50%;
     opacity: 0;
 }
-.profile__avatar-cover:hover::before {
-    opacity: 0.8;
+.profile__avatar-cover:hover {
+    opacity: 0.7;
     transition: opacity 1s linear;
 }
