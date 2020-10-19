@@ -42,8 +42,8 @@ export default class Api {
             method: 'POST',
             headers: this._headers,
             body: JSON.stringify({
-                link: `${name}`,
-                name: `${link}`
+                link: `${link}`,
+                name: `${name}`
             })
         })
         .then(res => this.resOk(res));
@@ -73,7 +73,7 @@ export default class Api {
         .then(res => this.resOk(res));
     }
     
-    editAvatar(avatar) {
+    editAvatar({avatar}) {
         return fetch(`${this._baseUrl}/users/me/avatar`, {
             method: 'PATCH',
             headers: this._headers,

@@ -10,17 +10,12 @@ export const profileJob = profile.querySelector('.profile__job');
 export const editUserButton = profile.querySelector('.profile__edit-button');
 export const addCardButton = profile.querySelector('.profile__add-button');
 export const popupCard = document.querySelector('.popup-card');
-export const closeCardButton = popupCard.querySelector('.popup-card__close-button');
 export const popupZoom = document.querySelector('.popup-zoom');
-export const newCardImage = addCardForm.querySelector('#card-link');
-export const newCardName = addCardForm.querySelector('#card-name');
 export const popupRemoval = document.querySelector('.popup-removal');
 export const popupAvatar = document.querySelector('.popup-avatar');
 export const avatarEditButton = profile.querySelector('.profile__avatar-edit');
 export const avatarEditForm = popupAvatar.querySelector('.popup-avatar__form');
 export const profileAvatar = profile.querySelector('.profile__avatar');
-export const newAvatar = popupAvatar.querySelector('#avatar-link');
-export const deleteCardButton = elementsContainer.querySelector('.element__delete-button');
 export const object = ({
     formSelector: '.popup__form',
     inputSelector: '.popup__input',
@@ -30,18 +25,8 @@ export const object = ({
     errorClass: 'popup__error_visible'
 });
 
-export const newCard = [{
-    name: '',
-    link: ''
-}];
-
 export const profileInfo = {
     name: '.profile__name',
     about: '.profile__job',
     avatar: '.profile__avatar'
-}
-
-export const newProfileInfo = {
-    newName: '',
-    newInfo: ''
 }

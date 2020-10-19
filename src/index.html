@@ -51,9 +51,9 @@
             <button type="button" name="close-button" class="popup__close-button popup-user__close-button"></button>
             <form class="popup__form popup-user__form" novalidate>
                     <h3 class="popup-user__title">Редактировать профиль</h3>
-                    <input placeholder="Имя пользователя" name="input-name" id="user-name" class="popup__input popup-user__field" type="text" required minlength="2" maxlength="40">
+                    <input placeholder="Имя пользователя" name="name" id="user-name" class="popup__input popup-user__field" type="text" required minlength="2" maxlength="40">
                     <span class="popup__error" id="user-name-error"></span>
-                    <input placeholder="Род деятельности" name="input-job" id="user-job" class="popup__input popup-user__field" type="text" required minlength="2" maxlength="200">
+                    <input placeholder="Род деятельности" name="about" id="user-job" class="popup__input popup-user__field" type="text" required minlength="2" maxlength="200">
                     <span class="popup__error" id="user-job-error"></span>
                     <button type="submit" class="popup__button popup-user__save-button" name="save-button">Сохранить</button>
             </form>
@@ -62,9 +62,9 @@
             <button type="button" name="card-close-button" class="popup__close-button popup-card__close-button"></button>
             <form class="popup__form popup-card__form" novalidate>
                     <h3 class="popup-card__title">Новое место</h3>
-                    <input placeholder="Название" name="input-card-name" id="card-name" class="popup__input popup-card__field" type="text" required minlength="1" maxlength="30">
+                    <input placeholder="Название" name="name" id="card-name" class="popup__input popup-card__field" type="text" required minlength="1" maxlength="30">
                     <span class="popup__error" id="card-name-error"></span>
-                    <input placeholder="Ссылка на картинку" name="input-card-link" id="card-link" class="popup__input popup-card__field" required type="url">
+                    <input placeholder="Ссылка на картинку" name="link" id="card-link" class="popup__input popup-card__field" required type="url">
                     <span class="popup__error" id="card-link-error"></span>
                     <button type="submit" class="popup__button popup-card__save-button" name="card-save-button">Создать</button>
             </form>
@@ -78,16 +78,16 @@
         </div>
         <div class="popup popup-removal">
             <button type="button" name="removal-close-button" class="popup__close-button popup-removal__close-button"></button>
-            <div class="popup-removal_container">
+            <form class="popup__form popup-removal__container">
                 <h3 class="popup-removal__verify">Вы уверены?</h3>
                 <button type="submit" class="popup__button popup-removal__verify-button" name="removal-save-button">Да</button>
-            </div>
+            </form>
         </div>
         <div class="popup popup-avatar">
             <button type="button" name="avatar-close-button" class="popup__close-button popup-avatar__close-button"></button>
             <form class="popup__form popup-avatar__form" novalidate>
                     <h3 class="popup-avatar__title">Обновить аватар</h3>
-                    <input placeholder="Ссылка на картинку" name="input-avatar-link" id="avatar-link" class="popup__input popup-avatar__field" required type="url">
+                    <input placeholder="Ссылка на картинку" name="avatar" id="avatar-link" class="popup__input popup-avatar__field" required type="url">
                     <span class="popup__error" id="avatar-link-error"></span>
                     <button type="submit" class="popup__button popup-avatar__save-button" name="avatar-save-button">Сохранить</button>
             </form>
