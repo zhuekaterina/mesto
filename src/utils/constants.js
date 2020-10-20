@@ -16,7 +16,7 @@ export const popupAvatar = document.querySelector('.popup-avatar');
 export const avatarEditButton = profile.querySelector('.profile__avatar-edit');
 export const avatarEditForm = popupAvatar.querySelector('.popup-avatar__form');
 export const profileAvatar = profile.querySelector('.profile__avatar');
-export const object = ({
+export const popupElements = ({
     formSelector: '.popup__form',
     inputSelector: '.popup__input',
     submitButtonSelector: '.popup__button',

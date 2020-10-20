@@ -4,7 +4,7 @@ export default class Api {
         this._headers = headers;
     }
 
-    resOk(res) {
+    getResStatus(res) {
         if (res.ok) {
             return res.json();
           }
@@ -15,14 +15,18 @@ export default class Api {
         return fetch(`${this._baseUrl}/users/me`, {
             headers: this._headers
         })
-        .then(res => this.resOk(res));
+        .then(res => this.getResStatus(res));
     }
 
     getInitialCards() {
         return fetch(`${this._baseUrl}/cards`, {
             headers: this._headers
         })
-        .then(res => this.resOk(res));
+        .then(res => this.getResStatus(res));
+    }
+
+    getAppInfo() {
+        return Promise.all([ this.getUserInfo(), this.getInitialCards() ]);
     }
 
     editUserInfo({name, about}) {
@@ -34,7 +38,7 @@ export default class Api {
               about: `${about}`
             })
         })
-        .then(res => this.resOk(res));
+        .then(res => this.getResStatus(res));
     }
 
     addNewCard({name, link}) {
@@ -46,7 +50,7 @@ export default class Api {
                 name: `${name}`
             })
         })
-        .then(res => this.resOk(res));
+        .then(res => this.getResStatus(res));
     }
 
     deleteCard(cardId) {
@@ -54,7 +58,7 @@ export default class Api {
             method: 'DELETE',
             headers: this._headers
         })
-        .then(res => this.resOk(res));
+        .then(res => this.getResStatus(res));
     }
 
     addLike(cardId) {
@@ -62,7 +66,7 @@ export default class Api {
             method: 'PUT',
             headers: this._headers
         })
-        .then(res => this.resOk(res));
+        .then(res => this.getResStatus(res));
     }
 
     deleteLike(cardId) {
@@ -70,7 +74,7 @@ export default class Api {
             method: 'DELETE',
             headers: this._headers
         })
-        .then(res => this.resOk(res));
+        .then(res => this.getResStatus(res));
     }
     
     editAvatar({avatar}) {
@@ -81,6 +85,6 @@ export default class Api {
               avatar: `${avatar}`
             })
         })
-        .then(res => this.resOk(res));
+        .then(res => this.getResStatus(res));
     }
 }
