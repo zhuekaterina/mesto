@@ -33,6 +33,13 @@ const api = new Api({
     }
 }); 
 
+//Экземпляр класса Section
+const cardsList = new Section({
+    renderer: (item) => {
+        cardsList.addItem(renderCard(item, '#elementTemplate'))
+    }
+  }, elementsContainer);
+
 let userId;
 //Получение информации о пользователе и карточек
 api
@@ -41,14 +48,7 @@ api
     userProfileInfo.setUserInfo({name: userInfo.name, about: userInfo.about});
     userProfileInfo.setUserAvatar(`${userInfo.avatar}`);
     userId = userInfo._id;
-    const initialCardsList = new Section({
-        items: initialCards,
-        renderer: (item) => {
-            initialCardsList.addItem(renderCard(item, '#elementTemplate'));
-        }},
-        elementsContainer
-    );
-    initialCardsList.renderItems();
+    cardsList.renderItems(initialCards);
 })
 .catch((err) => {
     console.log(err);
@@ -84,14 +84,7 @@ const popupWithCardForm = new PopupWithForm(popupCard,
         api
         .addNewCard(data)
         .then((readyInfo) => {
-            const newCardsList = new Section({
-                items: readyInfo,
-                renderer: (item) => {
-                    newCardsList.addItem(renderCard(item, '#elementTemplate'));
-                }},
-                elementsContainer
-            );
-            newCardsList.renderNewitems();
+            cardsList.renderNewitem(readyInfo);
         })
         .catch((err) => {
             console.log(err);

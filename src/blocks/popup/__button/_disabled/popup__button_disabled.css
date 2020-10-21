@@ -1,9 +1,9 @@
 .popup__button_disabled {
-    background-color: #ffffff;
-    border: 1px solid #cccccc;
-    color: #cccccc;
+    background-color: #ffffff!important;
+    border: 1px solid #cccccc!important;
+    color: #cccccc!important;
 }
 .popup__button_disabled:hover {
-    transition: none;
-    background-color: #ffffff;
+    transition: none!important;
+    background-color: #ffffff!important;
 }
