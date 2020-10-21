@@ -91,7 +91,7 @@ const popupWithCardForm = new PopupWithForm(popupCard,
                 }},
                 elementsContainer
             );
-            newCardsList.renderItems();
+            newCardsList.renderNewitems();
         })
         .catch((err) => {
             console.log(err);
