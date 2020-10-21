@@ -61,7 +61,7 @@ export default class Card {
     countLikes(likes) {
         this._likes = likes;
         this._likesNumber.textContent = this._likes.length; 
-        if(this._checkLikedCard()) {
+        if (this._checkLikedCard()) {
             this._likeButton.classList.add('element__like-button_active');
         } else {
             this._likeButton.classList.remove('element__like-button_active');
@@ -77,6 +77,9 @@ export default class Card {
         this._setEventListeners();
         this._element.querySelector('.element__picture').src = this._image;
         this._element.querySelector('.element__name').textContent = this._text;
+        if (this._checkLikedCard()) {
+            this._likeButton.classList.add('element__like-button_active');
+        }
         if (this._cardOwnerId === this._userId) {
             this._deleteButton.classList.add('element__delete-button_visible');
         }
